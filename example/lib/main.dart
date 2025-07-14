@@ -34,6 +34,7 @@ class _CaptchaPreviewState extends State<CaptchaPreview> {
   void initState() {
     super.initState();
     controller = CaptchaController();
+    controller.refreshCaptcha();
   }
 
   void _refreshCaptcha() {
