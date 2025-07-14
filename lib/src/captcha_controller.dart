@@ -1,27 +1,36 @@
 import 'dart:math';
-import 'package:flutter/material.dart';
-import 'models/captcha_char.dart';
-import 'models/captcha_line.dart';
+import 'dart:ui';
 
+import 'package:omjo_captcha/omjo_captcha.dart';
+
+/// A controller class to manage CAPTCHA generation, validation, and state.
+///
+/// This class is independent of any state management solution like GetX, making it
+/// reusable across different architectures.
 class CaptchaController {
+  /// Current CAPTCHA text value.
   String captchaText = '';
+
+  /// The list of styled characters for rendering.
   List<CaptchaChar> captchaChars = [];
+
+  /// The list of noise lines to render.
   List<CaptchaLine> captchaLines = [];
 
-  final int width;
-  final int height;
-
-  CaptchaController({this.width = 120, this.height = 50}) {
-    refreshCaptcha();
+  /// Validates the user input against the current CAPTCHA.
+  bool validateCaptcha(String input) {
+    return input.toUpperCase() == captchaText;
   }
 
+  /// Refreshes and regenerates the CAPTCHA text, characters, and noise lines.
   void refreshCaptcha({int length = 5}) {
     const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
     final random = Random();
+    final text = List.generate(length, (_) => chars[random.nextInt(chars.length)]).join();
 
-    captchaText = List.generate(length, (_) => chars[random.nextInt(chars.length)]).join();
+    captchaText = text;
 
-    captchaChars = captchaText.split('').map((char) {
+    captchaChars = text.split('').map((char) {
       return CaptchaChar(
         char: char,
         color: _randomReadableColor(),
@@ -32,17 +41,14 @@ class CaptchaController {
 
     captchaLines = List.generate(5, (_) {
       return CaptchaLine(
-        start: Offset(random.nextDouble() * width, random.nextDouble() * height),
-        end: Offset(random.nextDouble() * width, random.nextDouble() * height),
+        start: Offset(random.nextDouble() * 120, random.nextDouble() * 50),
+        end: Offset(random.nextDouble() * 120, random.nextDouble() * 50),
         color: _randomReadableColor(),
       );
     });
   }
 
-  bool validateCaptcha(String input) {
-    return input.toUpperCase() == captchaText;
-  }
-
+  /// Generates a random readable color.
   Color _randomReadableColor() {
     final r = 100 + Random().nextInt(156);
     final g = 100 + Random().nextInt(156);
