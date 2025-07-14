@@ -158,7 +158,7 @@ If you found a bug or want a new feature, please open an issue or submit a pull 
 
 ## 📄 License
 
-MIT © [Your Name or GitHub Username]  
+MIT © Abu Khoerul Iskandar Ali (Omjo)  
 See [LICENSE](LICENSE) for details.
 
 ---
