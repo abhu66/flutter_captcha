@@ -1,3 +1,8 @@
+## 0.0.8 - 2025-07-14
+
+### Added
+- Added “Support the Project” section in README.md with Buy Me a Coffee link
+
 ## 0.0.7 - 2025-07-14
 
 ### Changed
