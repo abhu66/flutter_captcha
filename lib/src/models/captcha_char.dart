@@ -21,4 +21,3 @@ class CaptchaChar {
     required this.rotation,
   });
 }
-

@@ -1,3 +1,9 @@
+## 0.0.7 - 2025-07-14
+
+### Changed
+- Applied `dart format` to all source files to comply with Dart formatting guidelines.
+- Improved pub.dev score by addressing formatting issues.
+
 ## 0.0.6 - 2025-07-14
 
 ### Added

@@ -26,7 +26,10 @@ class CaptchaController {
   void refreshCaptcha({int length = 5}) {
     const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
     final random = Random();
-    final text = List.generate(length, (_) => chars[random.nextInt(chars.length)]).join();
+    final text = List.generate(
+      length,
+      (_) => chars[random.nextInt(chars.length)],
+    ).join();
 
     captchaText = text;
 
