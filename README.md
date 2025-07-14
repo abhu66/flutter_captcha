@@ -1,0 +1,169 @@
+# flutter_captcha
+
+A customizable, client-side CAPTCHA widget for Flutter with randomized colorful characters and noise lines.  
+No backend required — perfect for login forms, guestbooks, or simple human verification needs.
+
+---
+
+![screenshot](https://raw.githubusercontent.com/yourusername/flutter_captcha/main/assets/example.png)  
+*<-- Ganti dengan screenshot demo jika tersedia*
+
+---
+
+## ✨ Features
+
+- 🎨 Randomized colored characters
+- 🔀 Noise/disturbance lines for bot resistance
+- 🔄 Easy CAPTCHA refresh
+- ✅ Custom validation logic
+- 🚫 Works entirely offline (no server needed)
+
+---
+
+## 📦 Installation
+
+Add this to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  flutter_captcha: ^0.0.1
+```
+
+Then run:
+
+```bash
+flutter pub get
+```
+
+---
+
+## 🚀 Usage
+
+Here's a simple example:
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:flutter_captcha/flutter_captcha.dart';
+import 'dart:math';
+
+class CaptchaPreview extends StatefulWidget {
+  const CaptchaPreview({super.key});
+
+  @override
+  State<CaptchaPreview> createState() => _CaptchaPreviewState();
+}
+
+class _CaptchaPreviewState extends State<CaptchaPreview> {
+  late List<CaptchaChar> characters;
+  late List<CaptchaLine> lines;
+
+  @override
+  void initState() {
+    super.initState();
+    _generateCaptcha();
+  }
+
+  void _generateCaptcha() {
+    final random = Random();
+    const text = 'A7B2X';
+
+    characters = text.split('').map((char) {
+      return CaptchaChar(
+        char: char,
+        color: _randomColor(random),
+        yOffset: 10 + random.nextDouble() * 10,
+        rotation: (random.nextDouble() - 0.5) * 0.3,
+      );
+    }).toList();
+
+    lines = List.generate(5, (_) {
+      return CaptchaLine(
+        start: Offset(random.nextDouble() * 120, random.nextDouble() * 50),
+        end: Offset(random.nextDouble() * 120, random.nextDouble() * 50),
+        color: _randomColor(random),
+      );
+    });
+
+    setState(() {});
+  }
+
+  Color _randomColor(Random random) {
+    return Color.fromARGB(
+      255,
+      100 + random.nextInt(156),
+      100 + random.nextInt(156),
+      100 + random.nextInt(156),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        CustomPaint(
+          size: const Size(150, 50),
+          painter: CaptchaPainter(characters, lines),
+        ),
+        const SizedBox(height: 10),
+        ElevatedButton(
+          onPressed: _generateCaptcha,
+          child: const Text('Refresh Captcha'),
+        ),
+      ],
+    );
+  }
+}
+```
+
+---
+
+## 📁 Folder Structure
+
+```
+lib/
+├── flutter_captcha.dart
+└── src/
+    ├── captcha_painter.dart
+    ├── models/
+    │   ├── captcha_char.dart
+    │   └── captcha_line.dart
+```
+
+---
+
+## 🧪 Example App
+
+Clone this repo and run the example:
+
+```bash
+cd example
+flutter run
+```
+
+---
+
+## 💡 Tips
+
+- You can wrap this CAPTCHA in a `TextFormField` widget for login forms.
+- Combine with your auth logic to validate user input against `captchaText`.
+
+---
+
+## 🛠️ Contributing
+
+Contributions are welcome!  
+If you found a bug or want a new feature, please open an issue or submit a pull request.
+
+---
+
+## 📄 License
+
+MIT © [Your Name or GitHub Username]  
+See [LICENSE](LICENSE) for details.
+
+---
+
+## 🙌 Credits
+
+Built with 💙 using Flutter.
