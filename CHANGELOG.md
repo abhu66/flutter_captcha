@@ -1,3 +1,14 @@
+## 0.0.9 - 2025-07-14
+
+### Added
+- Added **live demo** hosted on Netlify: [https://omjocaptcha.netlify.app](https://omjocaptcha.netlify.app)
+- Linked demo in `README.md` under "Live Demo" section
+- Added `documentation:` field in `pubspec.yaml` for better pub.dev integration
+
+### Changed
+- Minor visual refactoring of demo layout in `example/lib/main.dart`
+- Clarified README phrasing and formatting for international audience
+
 ## 0.0.8 - 2025-07-14
 
 ### Added
