@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_captcha/flutter_captcha.dart';
+import 'package:omjo_captcha/omjo_captcha.dart';
+
 
 void main() {
   test('CaptchaChar should store values correctly', () {

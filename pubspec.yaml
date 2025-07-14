@@ -1,4 +1,4 @@
-name: flutter_captcha
+name: omjo_captcha
 description: A customizable text-based CAPTCHA widget for Flutter with randomized colorful characters and lines. No backend required.
 version: 0.0.1
 homepage: https://github.com/abhu66/flutter_captcha

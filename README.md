@@ -1,4 +1,4 @@
-# flutter_captcha
+# omjo_captcha
 
 A customizable, client-side CAPTCHA widget for Flutter with randomized colorful characters and noise lines.  
 No backend required — perfect for login forms, guestbooks, or simple human verification needs.
@@ -25,7 +25,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_captcha: ^0.0.1
+  omjo_captcha: ^0.0.1
 ```
 
 Then run:
@@ -42,7 +42,7 @@ Here's a simple example:
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:flutter_captcha/flutter_captcha.dart';
+import 'package:omjo_captcha/omjo_captcha.dart';
 import 'dart:math';
 
 class CaptchaPreview extends StatefulWidget {
@@ -121,7 +121,7 @@ class _CaptchaPreviewState extends State<CaptchaPreview> {
 
 ```
 lib/
-├── flutter_captcha.dart
+├── omjo_captcha.dart
 └── src/
     ├── captcha_painter.dart
     ├── models/
