@@ -1,3 +1,8 @@
+## 0.0.4 - 2025-07-14
+
+### Fixed
+- Fixed screenshot not appearing on pub.dev by switching to raw GitHub image URL in README.md
+
 ## [0.0.3] - 2025-07-14
 
 ### Changed
