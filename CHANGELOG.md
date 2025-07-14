@@ -1,7 +1,17 @@
+## 0.0.6 - 2025-07-14
+
+### Added
+- Added full Dart documentation comments (`///`) to all public API elements:
+    - `CaptchaChar`
+    - `CaptchaLine`
+    - `CaptchaController`
+- Improved pub.dev analysis score by satisfying documentation coverage requirements.
+
 ## 0.0.5 - 2025-07-14
 
 ### Added
 - Introduced `CaptchaController` class for easier and reusable state management.
+- Added documentation comments to meet pub.dev API guidelines.
 
 ### Changed
 - Updated `example/lib/main.dart` to use `CaptchaController` instead of manual character/line generation.
