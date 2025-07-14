@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:omjo_captcha/omjo_captcha.dart';
-import 'dart:math';
 
 void main() {
   runApp(const MyApp());
@@ -29,46 +28,18 @@ class CaptchaPreview extends StatefulWidget {
 }
 
 class _CaptchaPreviewState extends State<CaptchaPreview> {
-  late List<CaptchaChar> characters;
-  late List<CaptchaLine> lines;
+  late CaptchaController controller;
 
   @override
   void initState() {
     super.initState();
-    _generateCaptcha();
+    controller = CaptchaController();
   }
 
-  void _generateCaptcha() {
-    final random = Random();
-    const text = 'A7B2X';
-
-    characters = text.split('').map((char) {
-      return CaptchaChar(
-        char: char,
-        color: _randomColor(random),
-        yOffset: 10 + random.nextDouble() * 10,
-        rotation: (random.nextDouble() - 0.5) * 0.3,
-      );
-    }).toList();
-
-    lines = List.generate(5, (_) {
-      return CaptchaLine(
-        start: Offset(random.nextDouble() * 120, random.nextDouble() * 50),
-        end: Offset(random.nextDouble() * 120, random.nextDouble() * 50),
-        color: _randomColor(random),
-      );
+  void _refreshCaptcha() {
+    setState(() {
+      controller.refreshCaptcha();
     });
-
-    setState(() {});
-  }
-
-  Color _randomColor(Random random) {
-    return Color.fromARGB(
-      255,
-      100 + random.nextInt(156),
-      100 + random.nextInt(156),
-      100 + random.nextInt(156),
-    );
   }
 
   @override
@@ -78,11 +49,11 @@ class _CaptchaPreviewState extends State<CaptchaPreview> {
       children: [
         CustomPaint(
           size: const Size(150, 50),
-          painter: CaptchaPainter(characters, lines),
+          painter: CaptchaPainter(controller.captchaChars, controller.captchaLines),
         ),
         const SizedBox(height: 10),
         ElevatedButton(
-          onPressed: _generateCaptcha,
+          onPressed: _refreshCaptcha,
           child: const Text('Refresh Captcha'),
         ),
       ],

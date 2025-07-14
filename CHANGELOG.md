@@ -1,18 +1,21 @@
+## 0.0.5 - 2025-07-14
+
+### Added
+- Introduced `CaptchaController` class for easier and reusable state management.
+
+### Changed
+- Updated `example/lib/main.dart` to use `CaptchaController` instead of manual character/line generation.
+- Improved modularity and reusability for developers not using GetX.
+
 ## 0.0.4 - 2025-07-14
 
-### Fixed
-- Fixed screenshot not appearing on pub.dev by switching to raw GitHub image URL in README.md
+### Added
+- Added GitHub-hosted screenshot to README.md using URL.
 
-## [0.0.3] - 2025-07-14
-
-### Changed
-- Minor update and re-publish with documentation refinement
-
-
-## 0.0.2 - 2025-07-14
+## 0.0.3 - 2025-07-14
 
 ### Changed
-- Updated the license section in `README.md` to include full name and organization
+- Updated the license section in `README.md` to include full name and organization.
 
 ## 0.0.1
 
