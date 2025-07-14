@@ -5,7 +5,7 @@ No backend required — perfect for login forms, guestbooks, or simple human ver
 
 ---
 
-![Captcha Screenshot](example/screenshots/captcha_preview.png)
+![Captcha Screenshot](screenshots/captcha_preview.png)
 
 ---
 
