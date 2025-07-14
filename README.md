@@ -5,8 +5,7 @@ No backend required — perfect for login forms, guestbooks, or simple human ver
 
 ---
 
-![screenshot](https://raw.githubusercontent.com/yourusername/flutter_captcha/main/assets/example.png)  
-*<-- Ganti dengan screenshot demo jika tersedia*
+![Captcha Screenshot](example/screenshots/captcha_preview.png)
 
 ---
 
