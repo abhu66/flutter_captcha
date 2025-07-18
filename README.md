@@ -1,5 +1,7 @@
 # omjo_captcha
 
+[![pub package](https://img.shields.io/pub/v/omjo_captcha.svg)](https://pub.dev/packages/omjo_captcha)
+
 A customizable, client-side CAPTCHA widget for Flutter with randomized colorful characters and noise lines.  
 No backend required — perfect for login forms, guestbooks, or simple human verification needs.
 

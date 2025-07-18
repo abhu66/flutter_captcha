@@ -1,3 +1,11 @@
+## 0.0.10 - 2025-07-18
+
+### Added
+- Added **status badges** at the top of `README.md` for improved visibility and pub.dev integration:
+  - Pub version: ![Pub Version](https://img.shields.io/pub/v/omjo_captcha)
+  - License: ![License](https://img.shields.io/pub/license/omjo_captcha)
+  - Platform: ![Platform](https://img.shields.io/badge/platform-flutter-blue)
+
 ## 0.0.9 - 2025-07-14
 
 ### Added
